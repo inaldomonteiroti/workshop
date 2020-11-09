@@ -26,4 +26,10 @@ class UsuarioController extends Controller
         $usuario->save();
         return redirect()->route('admin.usuarios');
     }
+    public function deletar($id)
+    {
+        User::find($id)->delete();
+        return redirect()->route('admin.usuarios');
+
+    }
 }

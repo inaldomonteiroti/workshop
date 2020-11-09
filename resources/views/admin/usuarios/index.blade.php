@@ -31,8 +31,8 @@
             <td>{{$usuario->email}}</td>
             <td>
                 <button type="button" class="btn btn-info">Editar</button>
-                <button type="button" class="btn btn-danger">Apagar</button>
-            </td>
+                <a class="btn btn-danger" href="{{route('admin.usuarios.deletar',$usuario->id)}}" role="button">Deletar</a>
+                </td>
           </tr>
           @endforeach
 
