@@ -3,26 +3,27 @@
 @section('content')
 
 <div class="container">
-    <h2>Adicionar</h2>
+    <h2>Editar Usuário</h2>
 
     <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/home">Home</a></li>
               <li class="breadcrumb-item"><a href="http://127.0.0.1:8000/admin/usuarios/">Lista de Usuários</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Adicionar Usuários</li>
+              <li class="breadcrumb-item active" aria-current="page">Editar Usuário</li>
             </ol>
           </nav>
     </div>
     <div class="row">
-        <form method="POST" action="{{ route('admin.usuarios.salvar') }}">
+        <form method="POST" action="{{ route('admin.usuarios.atualizar', $usuario->id ) }}">
+            <input type="hidden" name="_method" value="put">
             @csrf
 
             <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                 <div class="col-md-8">
-                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $usuario->name }}" required autocomplete="name" autofocus>
 
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -36,7 +37,7 @@
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                 <div class="col-md-8">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"  value="{{ $usuario->email }}" required autocomplete="email">
 
                     @error('email')
                         <span class="invalid-feedback" role="alert">

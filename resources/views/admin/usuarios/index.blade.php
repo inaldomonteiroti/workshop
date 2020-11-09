@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 
@@ -30,7 +30,7 @@
             <td>{{$usuario->name}}</td>
             <td>{{$usuario->email}}</td>
             <td>
-                <button type="button" class="btn btn-info">Editar</button>
+                <a class="btn btn-info" href="{{route('admin.usuarios.editar',$usuario->id)}}" role="button">Editar</a>
                 <a class="btn btn-danger" href="{{route('admin.usuarios.deletar',$usuario->id)}}" role="button">Deletar</a>
                 </td>
           </tr>

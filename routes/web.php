@@ -25,3 +25,5 @@ Route::get('/admin/usuarios', 'UsuarioController@index')->name('admin.usuarios')
 Route::get('/admin/usuarios/adicionar', 'UsuarioController@adicionar')->name('admin.adicionar');
 Route::post('/admin/usuarios/salvar', 'UsuarioController@salvar')->name('admin.usuarios.salvar');
 Route::get('/admin/usuarios/deletar/{id}', 'UsuarioController@deletar')->name('admin.usuarios.deletar');
+Route::get('/admin/usuarios/editar/{id}', 'UsuarioController@editar')->name('admin.usuarios.editar');
+Route::put('/admin/usuarios/atualizar/{id}', 'UsuarioController@atualizar')->name('admin.usuarios.atualizar');
